@@ -30,10 +30,7 @@ app.use(limiter);
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const dev_db_url =
-  "mongodb+srv://SlavicSandwich:Artbb98262502@cluster0.sxathpp.mongodb.net/local_library?retryWrites=true&w=majority";
-
-const mongoDB = process.env.MONGODB_URL || dev_db_url;
+const mongoDB = process.env.MONGODB_URL;
 main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
